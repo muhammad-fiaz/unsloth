@@ -15,7 +15,7 @@
 import warnings, importlib, sys
 from packaging.version import Version
 import os, re, subprocess, inspect
-import numpy as np
+import cupy as np
 
 # Unsloth currently does not work on multi GPU setups - sadly we are a 2 brother team so
 # enabling it will require much more work, so we have to prioritize. Please understand!

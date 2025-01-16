@@ -1760,7 +1760,7 @@ class FastLlamaModel:
         f"{chr(92)}        /    Total batch size = {total_train_batch_size:,} | Total steps = {max_steps:,}\\n"\\
         f' "-____-"     Number of trainable parameters = {get_model_param_count(model, trainable_only=True):,}'
         logger.warning(debug_info)
-        import subprocess, re, gc, numpy as np
+        import subprocess, re, gc, cupy as np
         a = np.array([0,])
         try:
             a = subprocess.check_output('nvidia-smi --query-gpu=memory.used --format=csv', shell = True)

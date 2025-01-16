@@ -22,7 +22,7 @@ from peft import PeftModelForCausalLM
 import torch
 import itertools
 import collections
-import numpy as np
+import cupy as np
 import gc
 import subprocess
 
@@ -982,7 +982,7 @@ def patch_sft_trainer_tokenizer():
 
         check_text = \
         "\n"\
-        "import subprocess, re, gc, numpy as np\n"\
+        "import subprocess, re, gc, cupy as np\n"\
         "a = np.array([0,])\n"\
         "try:\n"\
         "    a = subprocess.check_output('nvidia-smi --query-gpu=memory.used --format=csv', shell = True)\n"\
